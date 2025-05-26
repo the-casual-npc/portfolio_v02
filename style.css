@@ -1,0 +1,840 @@
+@font-face {
+  font-family: lexend;
+  src: url(fonts/Lexend/Lexend-VariableFont_wght.ttf);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    color: white;
+    text-decoration: none;
+}
+
+html {
+    font-family: lexend;
+    scroll-behavior: smooth;
+    color: white;
+}
+
+body {
+    background-size: 800% 800%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation: backgroundGradient 25s ease-in-out infinite;
+}
+
+@keyframes backgroundGradient {
+    0% {background-position: 0% 50%;}
+    50% {background-position: 100% 50%;}
+    100% {background-position: 0% 50%;}
+}
+
+/*Text*/
+p {
+    font-size: 1.1vw;
+    text-align: justify;
+}
+
+h1 {
+    font-size: 6vw;
+}
+
+h2 {
+    font-size: 2vw;
+}
+
+h3 {
+    font-size: 1.4vw;
+}
+
+/*Themes*/
+.themes {
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    top: 10vh;
+    position: fixed;
+    left: 0;
+    background-color: white;
+    border-radius: 0 0.5vw 0.5vw 0;
+    transition: 0.2s;
+    transform: translateX(-80%);
+    border: solid 1px black;
+}
+
+.themes:hover {
+    transform: translateX(0);
+}
+
+.theme {
+    width: 5vh;
+    height: 5vh;
+    border: solid 1px black;
+    margin: 1vh 2vw 1vh 1vw;
+    transition: 0.2s;
+    background-size: 100% !important;
+    border-radius: 5px;
+}
+
+.theme:hover, #shuffle:hover, .themeActive{
+    transform: scale(1.2);
+    cursor: pointer;
+}
+
+#shuffle {
+    width: 5vh;
+    height: 5vh;
+    border: solid 1px black;
+    margin: 1vh 2vw 1vh 1vw;
+    transition: 0.2s;
+    border-radius: 5px;
+
+    display: none;
+}
+
+/*Popups*/
+.black {
+    background: linear-gradient(270deg, #414141, #000000);
+    background-size: 800% 800%;
+}
+
+.blue {
+    background: linear-gradient(270deg, #00eeff, #002cbc);
+    background-size: 800% 800%;
+}
+
+.red {
+    background: linear-gradient(270deg, #db7602, #d61717);
+    background-size: 800% 800%;
+}
+
+.green {
+    background: linear-gradient(270deg, #c4ff21, #08de10);
+    background-size: 800% 800%;
+}
+
+.purple {
+    background: linear-gradient(270deg, #df06db, #a700ff);
+    background-size: 800% 800%;
+}
+
+.white {
+    background: linear-gradient(270deg, #d6d6d6, #ffffff);
+    background-size: 800% 800%;
+}
+
+.popup {
+    position: fixed;
+    bottom: 10vh;
+    background-color: white;
+    color: black;
+    padding: 0.5vw;
+    border-radius: 0.5vw;
+    transition: 0.2s;
+    opacity: 0;
+    z-index: 3;
+}
+
+.popupActive {
+    opacity: 1;
+    transform: translateY(-0.5vw);
+}
+
+.formSuccess {
+    color: rgb(24, 206, 24);
+}
+
+.formError {
+    color: rgb(201, 15, 15);
+}
+
+/*Scroll button*/
+#scrollToTop {
+    right: 5vh;
+    bottom: 5vh;
+    z-index: 3;
+    position: fixed;
+    height: 7vh;
+    width: 7vh;
+    background-color: rgba(0, 0, 0, 0.25);
+    border-radius: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.5s;
+}
+
+#scrollToTop > img {
+    height: 70%;
+    width: 70%;
+    transform: rotateZ(180deg);
+    filter: invert(1);
+}
+
+#scrollToTop:hover {
+    background-color: rgba(0, 0, 0, 0.45);
+    cursor: pointer;
+}
+
+.rotate {
+    transform: rotateZ(360deg);
+}
+
+/*Hero*/
+#hero {
+    z-index: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    transition: 0.5s;
+}
+
+.bgfade {
+    opacity: 0.3;
+    filter: blur(5px);
+}
+
+#hero > a {
+    background-color: rgba(0, 0, 0, 0.397);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+    height: 80%;
+    border: solid 1px white;
+    border-radius: 1vw;
+    transition: 1s;
+    animation: heroMove 10s ease-in-out infinite;
+    text-align: center;
+}
+
+.box {
+    width: 10%;
+    aspect-ratio: 1/1;
+    border-radius: 20%;
+    background-color: rgba(255, 255, 255, 0.386);
+    position: absolute;
+    transition: 0.2s;
+    margin: 2%;
+}
+
+.box1 {
+    left: 0;
+    top: 0;
+    animation: box1 4s infinite ease-in-out;
+}
+
+.box2 {
+    right: 0;
+    bottom: 0;
+    animation: box2 4s infinite ease-in-out;
+}
+
+@keyframes box1 {
+    0%   {left: 0;}
+    30%  {left: 86%;}
+    50%  {left: 86%;}
+    80%  {left: 0;}
+    100% {left: 0;}
+}
+
+@keyframes box2 {
+    0%   {right: 0;}
+    30%  {right: 86%;}
+    50%  {right: 86%;}
+    80%  {right: 0;}
+    100% {right: 0;}
+}
+
+@keyframes heroMove {
+    0% {transform: translateY(0);}
+    50% {transform: translateY(-0.5vw);}
+    100% {transform: translateY(0);}
+}
+
+#hero > a:hover {
+    box-shadow: 0px 0px 50px 30px #FFFFFF;
+    cursor: pointer;
+}
+
+/*About*/
+#about {
+    scroll-margin-top: 20vh;
+    z-index: 2;
+    margin-top: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+#about > div {
+    width: 45%;
+    margin: 1vw;
+}
+
+#about > div > p {
+    line-height: 1.5;
+    margin: 2vh 0;
+}
+
+#about > div > h2 {
+    text-decoration: underline;
+}
+
+.aboutText {
+    padding: 1vw;
+    border-radius: 1vw;
+    transition: 0.5s;
+    border: solid 1px rgba(0, 0, 0, 0.4);
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.aboutText:hover {
+    background-color: rgba(0, 0, 0, 0.4);
+    border: solid 1px white;
+}
+
+.hobbies {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.hobby {
+    display: flex;
+    background-color: rgba(0, 0, 0, 0.3);
+    width: fit-content;
+    margin: 2vh 0;
+    border-radius: 1vw;
+    transition: 0.2s;
+}
+
+.hobby > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 1vw;
+}
+
+.hobby img {
+    aspect-ratio: 1/1;
+    height: 15vh;
+    border-radius: 1vw;
+}
+
+.hobby:hover {
+    transform: translateY(-0.5vw);
+}
+
+/*Skills*/
+
+#skills {
+    z-index: 2;
+    transition: 0.5s;
+    width: 100%;
+    text-align: center;
+}
+
+#skills h2 {
+    margin-top: 5vh;
+}
+
+#skills > div {
+    display: flex;
+    justify-content: center;
+    gap: 2vw;
+}
+
+.skill {
+    margin-top: 5vh;
+    background: rgba(0,0,0,0.3);
+    border-radius: 15px;
+    width: 13%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    transition: transform 0.2s;
+}
+
+.skill img {
+    margin: 1vh;
+    width: 100%;
+    aspect-ratio: 1/1;
+}
+
+.skill:hover {
+    transform: translateY(-8px) scale(1.05);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.18);
+}
+
+/*
+<div id="skills" class="hidden">
+        <div class="skill">
+            <img src="img/html.png">
+            <div>
+                <h3>DM - Skill</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            </div>
+        </div>
+
+        <div class="skill">
+            <img src="img/html.png">
+            <div>
+                <h3>DM - Skill</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            </div>
+        </div>
+
+        <div class="skill">
+            <img src="img/html.png">
+            <div>
+                <h3>DM - Skill</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            </div>
+        </div>
+
+        <div class="skill">
+            <img src="img/html.png">
+            <div>
+                <h3>DM - Skill</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            </div>
+        </div>
+    </div>
+
+#skills {
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.skill {
+    border-radius: 1vw;
+    background-color: rgba(0, 0, 0, 0.45);
+    width: 15%;
+    text-align: center;
+}
+
+.skill img {
+    border-radius: 25px 25px 0 0;
+    width: 100%;
+    background-color: white;
+}
+*/
+
+/*
+    <div id="skills" class="appearBottom">
+
+        <h2>My Skills</h2>
+
+        <div>
+            <div class="skill">
+                <img src="img/html.png" alt="HTML Logo">
+                <h3>HTML</h3>
+            </div>
+            <div class="skill">
+                <img src="img/html.png" alt="CSS Logo">
+                <h3>CSS</h3>
+            </div>
+            <div class="skill">
+                <img src="img/html.png" alt="JavaScript Logo">
+                <h3>JavaScript</h3>
+            </div>
+            <div class="skill">
+                <img src="img/html.png" alt="Python Logo">
+                <h3>Python</h3>
+            </div>
+        </div>
+    </div>
+*/
+
+/*Projects*/
+#projects {
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    overflow: hidden;
+}
+
+.projectText {
+    margin-top: 5vh;
+    border-radius: 0.5vw;
+    background-color: rgba(0, 0, 0, 0.25);
+    border: solid 1px rgba(0, 0, 0, 0.45);
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: 0.2s;
+}
+
+.projectText:hover {
+    background-color: rgba(0, 0, 0, 0.45);
+    border: solid 1px white;
+}
+
+.projectText > * {
+    
+    margin: 1vh 1vw;
+}
+
+.projectText h2 {
+    border-bottom: solid 3px rgba(0, 0, 0, 0);
+}
+
+.project {
+    margin: 5vh;
+    height: 40vh;
+    width: 85%;
+    display: flex;
+    align-items: center;
+    border-radius: 1vw;
+    background-color: rgba(0, 0, 0, 0.2);
+    border: solid 1px rgba(0, 0, 0, 0.45);
+    filter: grayscale(100%);
+    transition: 0.2s;
+    opacity: 0.5;
+}
+
+.project img {
+    height: 100%;
+    width: 50%;
+    object-fit: cover;
+    border-radius: 1vw;
+}
+
+.project > div p {
+    margin-top: 2vh;
+}
+
+.project a, form > p > a {
+    transition: 0.2s;
+    color: rgb(92, 165, 255);
+    border-bottom: solid 1px rgba(0, 0, 0, 0);
+}
+
+.project a:hover , form > p > a:hover {
+    border-bottom: solid 1px rgb(92, 165, 255);
+    cursor: pointer;
+}
+
+.locked {
+    opacity: 1;
+    transform: translateY(-0.5vw);
+    background-color: rgba(0, 0, 0, 0.45);
+    border: solid 1px white;
+    filter: grayscale(0%);
+}
+
+.project:hover {
+    opacity: 1;
+    transform: translateY(-0.5vw);
+    background-color: rgba(0, 0, 0, 0.45);
+    border: solid 1px white;
+    filter: grayscale(0%);
+    cursor: pointer;
+}
+
+.project > div {
+    margin: 0 2vw;
+    width: 50%;
+}
+
+.project > div > h3 {
+    width: fit-content;
+    transition: 0.1s;
+}
+
+.highlight {
+    padding-left: 3px;
+    border-left: solid 3px white;
+}
+
+.tags {
+    display: flex;
+}
+
+.tag {
+    margin: 1vh 1vh 1vh 0;
+    padding: 5px 7px;
+    border-radius: 100px;
+    width: fit-content;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.school {
+    border: solid 3px rgb(0, 255, 0);
+}
+
+.html {
+    border: solid 3px rgb(255, 98, 0);
+}
+
+.css {
+    border: solid 3px rgb(0, 255, 255);
+}
+
+.js {
+    border: solid 3px rgb(255, 247, 0);
+}
+
+.py {
+    border-left: solid 3px rgb(29, 120, 190);
+    border-top: solid 3px rgb(29, 120, 190);
+    border-right: solid 3px rgb(255, 247, 0);
+    border-bottom: solid 3px rgb(255, 247, 0);
+}
+
+.mysteryPurple {
+    border: solid 3px rgb(212, 0, 255);
+}
+
+.mysteryRed {
+    border: solid 3px rgb(255, 0, 0);
+}
+
+/*Contact*/
+#contact {
+    background-color: rgba(0, 0, 0, 0.35);
+    z-index: 2;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+#contact > * {
+    margin-top: 5vh;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: 0.2s;
+    width: 45%;
+    margin: 5vh 0;
+}
+
+form h2 {
+    margin-bottom: 3vh;
+    border-bottom: solid 3px rgba(0, 0, 0, 0);
+    transition: 0.2s;
+}
+
+.formOpen {
+    border-bottom: solid 3px white;
+}
+
+form div {
+    margin-bottom: 5vh;
+    width: 90%;
+}
+
+form input {
+    height: 5vh;
+}
+
+form textarea {
+    height: 20vh;
+}
+
+form input, textarea {
+    font-family: 'Lexend';
+    border: none;
+    background-color: rgba(0, 0, 0, 0.35);
+    width: 99%;
+    padding: 0 1%;
+    margin-bottom: 1vh;
+    border-radius: 0 0.5vw 0.5vw 0;
+    transition: 0.2s;
+}
+
+form input:focus, textarea:focus {
+    outline: none;
+    background-color: rgba(0, 0, 0, 0.55);
+}
+
+form > div > div {
+    margin: 0;
+    width: 100%;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+
+form button {
+    border-radius: 0.5vw;
+    border: none;
+    background-color: rgba(0, 0, 0, 0.25);
+    font-family: 'Lexend';
+    height: 5vh;
+    width: 20%;
+    transition: 0.2s;
+    margin: 0 0 0 1vw;
+}
+
+form button:hover {
+    background-color: rgba(0, 0, 0, 0.45);
+    cursor: pointer;
+}
+
+/*Page select*/
+#selector {
+    display: none;
+    border: solid 1px yellowgreen;
+
+    z-index: 2;
+    /*display: flex;*/
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+#selector a {
+    margin-top: 5vh;
+}
+
+.hide {
+    display: none !important;
+}
+
+.fade {
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out;
+}
+
+/*Appear animations*/
+
+.appearRight {
+    opacity: 0;
+    transform: translateX(200px);
+}
+
+.appearLeft {
+    opacity: 0;
+    transform: translateX(-200px);
+}
+
+.appearBottom {
+    opacity: 0;
+    transform: translateY(200px);
+}
+
+/*Other stuff*/
+.heroBlack {
+    background-color: black;
+    opacity: 1;
+}
+
+/*Tablet layout*/
+@media (max-width: 1000px) {
+  .popup {
+    padding: 1vw;
+  }
+
+  .themes {
+    transform: translateX(-50%);
+  }
+
+  .hobby img {
+    height: auto;
+    width: 20%;
+  }
+
+  .projectText {
+    background-color: rgba(0, 0, 0, 0.45);
+  }
+}
+
+/*Phone layout*/
+@media (max-width: 600px) {
+
+    h1 {
+        font-size: 10vw;
+    }
+
+    h2 {
+        font-size: 5vw;
+    }
+
+    h3 {
+        font-size: 3vw;
+    }
+
+    p {
+        font-size: 2.5vw;
+    }
+
+    .themes {
+        transform: translateX(0) translateY(-70%);
+        flex-direction: row;
+        left: inherit;
+        top: 0;
+    }
+
+    .theme {
+        margin: 1vh 2vw;
+    }
+
+    .themes:hover {
+        transform: translateX(0) translateY(0);
+    }
+
+    #hero a {
+        height: 50vh;
+    }
+
+    #about {
+        flex-direction: column;
+    }
+
+    #about > div {
+        width: 90%;
+        margin-top: 3vh;
+    }
+
+    .projectText {
+        width: 90%;
+    }
+
+    .project {
+        flex-direction: column;
+        height: fit-content;
+        border: none;
+    }
+
+    .project > div {
+        width: 90%;
+        margin-bottom: 2vw;
+    }
+
+    .project > img {
+        width: 100%;
+        margin-bottom: 2vw;
+    }
+
+    .reverse{
+        flex-direction: column-reverse;
+    }
+
+    form {
+        width: 90%;
+    }
+}

@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Ondřej Puk</title>
+</head>
+<body id="bg" class="black">
+
+    <div class="popup projShow">Project will remain visible</div>
+    <div class="popup projHide">Project will hide</div>
+    <div class="popup formSuccess">Message submited succesfully!</div>
+    <div class="popup formError">An Error occured. Please try again</div>
+    <div class="popup bgBlack">Theme changed to Dark</div>
+    <div class="popup bgWhite">Theme changed to Light</div>
+    <div class="popup bgGreen">Theme changed to Green/Yellow</div>
+    <div class="popup bgPurple">Theme changed to Purple/Pink</div>
+    <div class="popup bgBlue">Theme changed to Blue/Aqua</div>
+    <div class="popup bgRed">Theme changed to Red/Orange</div>
+    <div class="popup clipboard">Copied to clipboard</div>
+    <div class="popup shuffleOn">Themes will shuffle randomly</div>
+
+    <div class="themes">
+        <div class="theme black themeActive" onclick="bgChange(0)"></div>
+        <div class="theme white" onclick="bgChange(5)"></div>
+        <div class="theme green" onclick="bgChange(3)"></div>
+        <div class="theme purple" onclick="bgChange(4)"></div>
+        <div class="theme blue" onclick="bgChange(1)"></div>
+        <div class="theme red" onclick="bgChange(2)"></div>
+        <div class="theme" id="shuffle"></div>
+    </div>
+
+    <div id="scrollToTop"><img src="img/DM-arrow.png"></div>
+
+    <div id="hero" class="appearBottom">
+        
+        <a href="#about">
+            <div class="box box1"></div>
+            <div>
+                <h1>ONDŘEJ PUK</h1>
+                <h2>Placeholder text, very skibidi</h2>
+            </div>
+            <div class="box box2"></div>
+        </a>
+        
+    </div>
+
+    <div id="about">
+        <div class="aboutText">
+            <h2>About me:</h2>
+            <p>Hi! I'm Ondřej (Andrew), a curious student developer, and this is my portfolio website. I'm 16 years old, and I'm from the Czech Republic, so I speak both Czech and English. I'm a student at Creative Hill College, studying the Development of video games and multimedia applications. I also LOVE the Lexend font!</p>
+            <p>I specialize in web development and Python, and So far, I have made complete projects using HTML and CSS, JavaScript and Python. I like learning new things, including C# in Unity, Luau in Roblox Studio, Kotlin in Android Studio, and more.</p>
+        </div>
+
+        <div class="hobbies">
+            <div class="hobby">
+                <img src="img/DM-hobby.png">
+                <div>
+                    <h3>Computer... Stuff</h3>
+                    <p>The obsious one. This field is rather large, from building computers, understanding how they work, software, video editing, and of course - games.</p>
+                </div>
+            </div>
+
+            <div class="hobby">
+                <img src="img/DM-hobby.png">
+                <div>
+                    <h3>Swiming/Diving</h3>
+                    <p>Believe it or not, i go outside sometimes. I've always loved water which evolved into Freediving - Diving on a single breath, without some fancy equipement</p>
+                </div>
+            </div>
+
+            <div class="hobby">
+                <img src="img/DM-hobby.png">
+                <div>
+                    <h3>Piano</h3>
+                    <p>I've been playing for 10 years now, and have played some well know pieces (<i>Turkish March</i>, <i>Maple Leaf Rag</i>), as well as more casual songs (<i>I've Got No Time</i>, <i>Bergentrückung & Asgore</i>).</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="selector">
+        <a><button onclick="selector(1)">Skills</button></a>
+        <a><button onclick="selector(2)">Projects</button></a>
+        <a><button onclick="selector(3)">Learning Journey</button></a>
+    </div>
+
+    <div id="projects">
+
+        <div class="projectText">
+            <h2>My Projects</h2>
+            <p>Now onto the important stuff. Below, you can find some of my projects. With every project comes an explanation of what it is, when i made it, how it works etc. Most of them are School Projects, but with time more and more other stuff will come!</p>
+            <p>When a projects is clicked, it stays visible, so you don't have to hover your cursor over it to read it.</p>
+        </div>
+
+        <div class="project appearLeft">
+            <img src="img/project-highlive.png" class="L">
+            <div class="myTextContainer">
+                <h3>Highlive Website</h3>
+                <p>This is a website for Highlive - a Czech Company doing repairs and stuff at highs, and other places where it's hard to get to.</p>
+                <p>For this Website, I didn't use much fancy Javascript to keep it professional, but I tried to make it look somewhat friendly. It's made entirely in Czech (It's a Czech company), and It's hosted at <a href="https://highlive.jednoduse.cz" target="_blank">highlive.jednoduse.cz</a>, so you can check it out!</p>
+                <div class="tags">
+                    <p class="tag html">HTML</p>
+                    <p class="tag css">CSS</p>
+                    <p class="tag js">JavaScript</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="project appearRight reverse">
+            <div class="L">
+                <h3>Death Note Website</h3>
+                <p>This is a website about the anime Death Note. In school we got assigned to make a website presentation about a film or a series we liked, so i chose Death Note for it's distinct theme.</p>
+                <p>The website consists of a heropage and some subpages for the lore, characters, etc. This page was my first introduction to JavaScript, so it was pretty exciting. It is also entirely in Czech.</p>
+                <div class="tags">
+                    <p class="tag school">School project</p>
+                    <p class="tag html">HTML</p>
+                    <p class="tag css">CSS</p>
+                    <p class="tag js">JavaScript</p>
+                </div>
+            </div>
+            <img src="img/project-deathnote.png">
+        </div>
+
+        <div class="project appearLeft">
+            <img src="img/project-gameOfLife.png" class="L">
+            <div>
+                <h3>Game of Life</h3>
+                <p>While learning python at school, we got assigned multiple projects, including this one. It is a Python recreation of the <a href="https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life" target="_blank">Convey's Game of Life</a>.</p>
+                <p>The project was made using PyCharm, and in the game, you can choose the size of the game board, the percentage starting with live cells (the placement is random), and the number of iterations the game runs for. The is using ASCII art for its design.</p>
+                <div class="tags">
+                    <p class="tag school">School project</p>
+                    <p class="tag py">Python</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="project appearRight reverse">
+            <div class="L">
+                <h3>The Maze Game</h3>
+                <p>This is another python school project. Once you start the game you can move around the maze using W, A, S, D. The goal is to get to the exit while avoiding traps and enemies.</p>
+                <p>The maze is randomly generated each time, with selectable size. There are toggleable enemies, traps, healing potions and fog of war. It was also made in PyCharm. The game can be saved and loaded anytime. The menus are designed with a combination of ASCII art and emojis.</p>
+                <div class="tags">
+                    <p class="tag school">School project</p>
+                    <p class="tag py">Python</p>
+                </div>
+            </div>
+            <img src="img/project-maze.png">
+        </div>
+
+        <div class="project appearLeft">
+            <img src="img/project-gameOfLife.png" class="L">
+            <div>
+                <h3>Your Project!</h3>
+                <p>Do you have a project in mind? Something you want or need and are you looking for someone fast, reliable and willing to make it exactly to your liking? Look no more!</p>
+                <p>This next project could be yours. Just contact me in the form below, we can sort out the details, and consider it done! I am open to making regular updates to your projects, if you want to, and even if it's something not within my current skills, I'm always open to learning new things.</p>
+                <div class="tags">
+                    <p class="tag mysteryRed">?????</p>
+                    <p class="tag py">?????</p>
+                    <p class="tag css">?????</p>
+                    <p class="tag js">?????</p>
+                    <p class="tag mysteryPurple">?????</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="contact">
+        <form action="https://api.web3forms.com/submit" method="POST" class="appearBottom" id="form">
+
+            <input type="hidden" name="access_key" value="40b65297-de90-47db-92aa-c34cd752ebb7">
+
+            <h2>Leave me a message!</h2>
+            <div>
+                <h3>Name or Alias</h3>
+                <input type="text" name="name" required>
+
+                <h3>Email</h3>
+                <input type="email" name="email" required>
+
+                <h3>Your message</h3>
+                <textarea name="message" required></textarea>
+
+                <div>
+                    <p>(Response time: Within 1 day)</p>
+                    <button type="submit"><h3>Send</h3></button>
+                </div>
+            </div>
+
+            <p>Alternativelly, you can email me at: <a>puk.ondrej@gmail.com</a></p>
+
+        </form>
+    </div>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
