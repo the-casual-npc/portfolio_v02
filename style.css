@@ -767,19 +767,20 @@ form button:hover {
 @media (max-width: 600px) {
 
     h1 {
-        font-size: 10vw;
+        font-size: 15vw;
+        text-align: left;
     }
 
     h2 {
-        font-size: 5vw;
+        font-size: 7vw;
     }
 
     h3 {
-        font-size: 3vw;
+        font-size: 5vw;
     }
 
     p {
-        font-size: 2.5vw;
+        font-size: 4vw;
     }
 
     .themes {
@@ -798,7 +799,7 @@ form button:hover {
     }
 
     #hero a {
-        height: 50vh;
+        height: 30vh;
     }
 
     #about {
@@ -836,6 +837,5 @@ form button:hover {
 
     form {
         width: 90%;
-        background-color: white;
     }
 }
