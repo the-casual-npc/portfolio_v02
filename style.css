@@ -836,5 +836,6 @@ form button:hover {
 
     form {
         width: 90%;
+        background-color: white;
     }
 }
