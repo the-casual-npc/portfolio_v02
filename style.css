@@ -846,6 +846,10 @@ form button:hover {
         margin-bottom: 2vw;
     }
 
+    .tags p {
+        font-size: 2.5vw;
+    } 
+
     .reverse{
         flex-direction: column-reverse;
     }

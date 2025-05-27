@@ -177,7 +177,7 @@ function appearObserverCallback(entries) {
 let treshold = 0.5;
 
 if (window.innerWidth < 1000) {
-    treshold = 0.1; // Lower threshold for smaller screens
+    treshold = 0.1;
 }
 
 
