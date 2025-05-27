@@ -95,7 +95,7 @@ h3 {
 
 /*Popups*/
 .black {
-    background: linear-gradient(270deg, #414141, #000000);
+    background: linear-gradient(270deg, #414141, #414141);
     background-size: 800% 800%;
 }
 
@@ -120,7 +120,7 @@ h3 {
 }
 
 .white {
-    background: linear-gradient(270deg, #d6d6d6, #ffffff);
+    background: linear-gradient(270deg, #d6d6d6, #d6d6d6);
     background-size: 800% 800%;
 }
 
@@ -810,14 +810,30 @@ form button:hover {
         margin-top: 3vh;
     }
 
+    .hobby {
+        height: 11vh;
+    }
+
+    .hobby img {
+        height: 100%;
+        aspect-ratio: 1/1;
+        width: auto;
+    }
+
+    #projects {
+        margin-bottom: 5vh;
+    }
+
     .projectText {
-        width: 90%;
+        width: 95%;
     }
 
     .project {
         flex-direction: column;
         height: fit-content;
         border: none;
+        width: 90%;
+        margin: 5vh 0 0 0;
     }
 
     .project > div {
