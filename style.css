@@ -767,20 +767,19 @@ form button:hover {
 @media (max-width: 600px) {
 
     h1 {
-        font-size: 15vw;
-        text-align: left;
+        font-size: 10vw;
     }
 
     h2 {
-        font-size: 7vw;
-    }
-
-    h3 {
         font-size: 5vw;
     }
 
-    p {
+    h3 {
         font-size: 4vw;
+    }
+
+    p {
+        font-size: 3vw;
     }
 
     .themes {
