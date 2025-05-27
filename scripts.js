@@ -174,7 +174,14 @@ function appearObserverCallback(entries) {
     });
 }
 
-const appearObserver = new IntersectionObserver(appearObserverCallback, { threshold: 0.5 });
+let treshold = 0.5;
+
+if (window.innerWidth < 1000) {
+    treshold = 0.1; // Lower threshold for smaller screens
+}
+
+
+const appearObserver = new IntersectionObserver(appearObserverCallback, { threshold: treshold });
 
 setTimeout(appearElements.forEach(element => appearObserver.observe(element)), 1000);
 
