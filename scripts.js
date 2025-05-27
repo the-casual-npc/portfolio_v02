@@ -142,6 +142,7 @@ projects.forEach((project) => {
             }
         });
     } else {
+        project.classList.remove('appearRight', 'appearLeft', 'appearBottom');
         project.classList.add('locked');
     }
 });
