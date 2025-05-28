@@ -142,7 +142,6 @@ projects.forEach((project) => {
             }
         });
     } else {
-        //project.classList.remove('appearRight', 'appearLeft', 'appearBottom');
         project.classList.add('locked');
     }
 });
@@ -180,8 +179,7 @@ if (window.innerWidth < 1000) {
     treshold = 0.1;
 }
 
-
-const appearObserver = new IntersectionObserver(appearObserverCallback, { threshold: treshold });
+const appearObserver = new IntersectionObserver(appearObserverCallback, {threshold: treshold});
 
 setTimeout(appearElements.forEach(element => appearObserver.observe(element)), 1000);
 
