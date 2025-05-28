@@ -212,7 +212,6 @@ function selector(page) {
 }
 
 //Contact form
-
 let formSent = false
 
 function formCheck() {
@@ -304,4 +303,18 @@ email.addEventListener('click', function() {
     navigator.clipboard.writeText('puk.ondrej@gmail.com');
     popupShow('clipboard', 2);
     console.log("Email copied");
+});
+
+//Heropage hover animation
+const h1 = document.getElementsByTagName('h1')[0];
+a = hero.getElementsByTagName('a')[0];
+
+a.addEventListener('mouseenter', function() {
+    h1.classList.add('heroHover');
+    console.log("Hero hover");
+});
+
+a.addEventListener('mouseleave', function() {
+    h1.classList.remove('heroHover');
+    console.log("Hero unhover");
 });
